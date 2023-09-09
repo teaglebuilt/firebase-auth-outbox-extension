@@ -59,6 +59,17 @@ resources:
         resource: projects/${PROJECT_ID}
       runtime: "nodejs16"
 
+  - name: producerSignInEvent
+    type: firebaseextensions.v1beta.function
+    description: >-
+      Publish user deleted events to kafka
+    properties:
+      location: ${LOCATION}
+      eventTrigger:
+        eventType: providers/firebase.auth/eventTypes/user.delete
+        resource: projects/${PROJECT_ID}
+      runtime: "nodejs16"
+
 # In the `params` field, set up your extension's user-configured parameters.
 # Learn more in the docs:
 # https://firebase.google.com/docs/extensions/reference/extension-yaml#params-field
