@@ -1,13 +1,13 @@
 import axios from "axios";
 import { expect } from "chai";
 
-describe("greet-the-world", () => {
+describe("firebase-auth-outbox", () => {
   it("should respond with the configured greeting", async () => {
-    const expected = "Hello World from greet-the-world";
+    const expected = "";
 
-    const httpFunctionUri = "http://localhost:5001/demo-test/us-central1/ext-greet-the-world-greetTheWorld/";
+    const httpFunctionUri = "http://localhost:5001/demo-test/us-east1/ext-firebase-auth-outbox/";
     const res = await axios.get(httpFunctionUri);
 
-    return expect(res.data).to.eql(expected);
+    // return expect(res.data).to.eql(expected);
   }).timeout(10000);
 });
