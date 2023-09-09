@@ -22,7 +22,14 @@ sourceUrl: https://github.com/teaglebuilt/firebase-auth-outbox-extension
 
 # Specify whether a paid-tier billing plan is required to use your extension.
 # Learn more in the docs: https://firebase.google.com/docs/extensions/reference/extension-yaml#billing-required-field
-billingRequired: true
+billingRequired: false
+
+author:
+  authorName: Dillan Teagle
+  email: dillan.teagle.va@gmail.com
+  url: https://github.com/teaglebuilt
+contributors:
+  - authorName: Dillan Teagle
 
 # In an `apis` field, list any Google APIs (like Cloud Translation, BigQuery, etc.)
 # required for your extension to operate.
@@ -74,6 +81,12 @@ resources:
 # Learn more in the docs:
 # https://firebase.google.com/docs/extensions/reference/extension-yaml#params-field
 params:
+  - param: BROKER
+    label: Broker URL
+    description: "url of broker example: https://kafka.domain-name.com:9092"
+  - param: TOPIC
+    label: Name of Topic
+    description: Name of the topic you will be publishing messages to
   - param: FIELDS_TO_INCLUDED
     label: Fields to include
     description: >-
@@ -98,8 +111,7 @@ params:
         value: disabled
       - label: creationTime
         value: creationTime
-    default: email,displayName,photoURL
-    required: true
+    
 
   - param: LOCATION
     label: Cloud Functions location
