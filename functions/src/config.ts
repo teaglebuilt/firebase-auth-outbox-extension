@@ -1,9 +1,9 @@
-interface IConfig {
+interface Configuration {
   fieldsToInclude: string[];
   location: string;
 }
 
-const config: IConfig = {
+const config: Configuration = {
   fieldsToInclude: process.env.FIELDS_TO_INCLUDE!.split(','),
   location: process.env.FUNCTIONS_LOCATION!,
 };

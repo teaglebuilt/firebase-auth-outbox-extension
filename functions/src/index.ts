@@ -53,4 +53,3 @@ export const produceUserSignInEvent = functions.auth
 
     // TODO: raise event to kafka
   });
-
