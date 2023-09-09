@@ -37,14 +37,25 @@ billingRequired: true
 # Learn more in the docs:
 # https://firebase.google.com/docs/extensions/reference/extension-yaml#resources-field
 resources:
-  - name: producerUserAuthEvent
+  - name: producerUserCreatedEvent
     type: firebaseextensions.v1beta.function
     description: >-
-      Publish user object to kafka
+      Publish user created events to kafka
     properties:
       location: ${LOCATION}
       eventTrigger:
         eventType: providers/firebase.auth/eventTypes/user.create
+        resource: projects/${PROJECT_ID}
+      runtime: "nodejs16"
+
+  - name: producerUserDeletedEvent
+    type: firebaseextensions.v1beta.function
+    description: >-
+      Publish user deleted events to kafka
+    properties:
+      location: ${LOCATION}
+      eventTrigger:
+        eventType: providers/firebase.auth/eventTypes/user.delete
         resource: projects/${PROJECT_ID}
       runtime: "nodejs16"
 

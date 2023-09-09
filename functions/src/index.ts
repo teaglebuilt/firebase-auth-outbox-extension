@@ -27,17 +27,20 @@ const getUserAuthFields = (user: UserRecord) => {
   return fields;
 };
 
-exports.greetTheWorld = functions.https.onRequest(
-  (req: functions.Request, res: functions.Response) => {
-    // Here we reference a user-provided parameter
-    // (its value is provided by the user during installation)
-    const consumerProvidedGreeting = process.env.GREETING;
 
-    // And here we reference an auto-populated parameter
-    // (its value is provided by Firebase after installation)
-    const instanceId = process.env.EXT_INSTANCE_ID;
+export const produceUserCreatedEvent = functions.auth
+  .user()
+  .onCreate(async (user) => {
+    const data = getUserAuthFields(user);
 
-    const greeting = `${consumerProvidedGreeting} World from ${instanceId}`;
-
-    res.send(greeting);
+    // TODO: raise event to kafka
   });
+
+export const produceUserDeletedEvent = functions.auth
+  .user()
+  .onDelete(async (user) => {
+    const data = getUserAuthFields(user);
+
+    // TODO: raise event to kafka
+  });
+
