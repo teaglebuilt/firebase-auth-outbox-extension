@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
+      - run: npm install
         working-directory: functions
       - run: npm run lint
         working-directory: functions
@@ -35,7 +35,7 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
+      - run: npm install
         working-directory: functions
       - run: npm run test:integration
         working-directory: functions
