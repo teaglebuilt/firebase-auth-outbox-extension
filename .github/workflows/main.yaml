@@ -1,0 +1,14 @@
+---
+name: CICD
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: checkout@v3
