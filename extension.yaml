@@ -84,9 +84,11 @@ params:
   - param: BROKER
     label: Broker URL
     description: "url of broker example: https://kafka.domain-name.com:9092"
+    type: string
   - param: TOPIC
     label: Name of Topic
     description: Name of the topic you will be publishing messages to
+    type: string
   - param: FIELDS_TO_INCLUDED
     label: Fields to include
     description: >-
@@ -111,8 +113,6 @@ params:
         value: disabled
       - label: creationTime
         value: creationTime
-    
-
   - param: LOCATION
     label: Cloud Functions location
     description: >-
