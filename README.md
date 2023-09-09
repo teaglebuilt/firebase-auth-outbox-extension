@@ -13,12 +13,19 @@ Currently, here are the events available to produce. Events are labeled as 1st o
 * _1st Class_ `On User Sign In`
 
 
-#### Brokers Available
+#### Broker Clients Available
 
-1. **Kafka** - TODO: explain
+Two parameters are required.
+- `Broker` - `https://broker.com:9092`
+- `Topic` - `my-topic-to-publish-events-to`
 
+
+1. **Kafka** - Uses [KafkaJS](https://kafka.js.org/docs/getting-started) and is currently the only supported client.
+2. **NATS** - Next supported client on the list
 
 
 ### Installation
 
-> Coming soon ...
+Visit extension in firebase extensions store [here](https://console.firebase.google.com/project/teaglebuilt-6226f/publisher/extensions/firebase-auth-outbox/v/0.0.1-beta.0).
+
+You can also click [this link](https://console.firebase.google.com/project/teaglebuilt-6226f/publisher/extensions/firebase-auth-outbox/v/0.0.1-beta.0) to directly install the extension, assuming you already have firebase and authentication setup.
