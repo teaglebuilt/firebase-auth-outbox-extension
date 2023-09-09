@@ -1,5 +1,7 @@
 # Firebase Auth Outbox Extension
 
+[![CICD](https://github.com/teaglebuilt/firebase-auth-outbox-extension/actions/workflows/main.yaml/badge.svg)](https://github.com/teaglebuilt/firebase-auth-outbox-extension/actions/workflows/main.yaml)
+
 Publishes events raised from firebase authentication to a broker of choosing. The extension refers to outbox since this data is persisted, however some events in this extension can be captured that occur before a persisted action occurs.
 
 #### Events Captured
@@ -14,4 +16,9 @@ Currently, here are the events available to produce. Events are labeled as 1st o
 #### Brokers Available
 
 1. **Kafka** - TODO: explain
-2. 
+
+
+
+### Installation
+
+> Coming soon ...

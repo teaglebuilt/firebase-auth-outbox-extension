@@ -6,6 +6,11 @@ on:
     branches:
       - master
 
+defaults:
+  run:
+    shell: bash
+    working-directory: functions
+
 jobs:
   lint:
     runs-on: ubuntu-latest
