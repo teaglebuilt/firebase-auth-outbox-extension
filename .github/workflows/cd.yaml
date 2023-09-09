@@ -1,0 +1,25 @@
+---
+name: CI
+
+on:
+  push:
+    branches:
+      - 'master'
+
+defaults:
+  run:
+    shell: bash
+    working-directory: functions
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
